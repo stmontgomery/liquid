@@ -143,7 +143,8 @@ module Liquid
         $1.to_s
       # Double quoted strings
       when /^"(.*)"$/
-        $1.to_s
+        #$1.to_s
+        find_variable($1.to_s)    # modification for CNS to allow double-quoted strings to represent event keys
       # Integer
       when /^([+-]?\d+)$/
         $1.to_i
