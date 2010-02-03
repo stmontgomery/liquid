@@ -154,7 +154,7 @@ module Liquid
         return input.to_s
       end
       
-      date = input.is_a?(String) ? Time.parse(input) : input
+      date = input.is_a?(String) ? Time.zone.parse(input) : input
       
       if date.respond_to?(:strftime)
         date.strftime(format.to_s)
